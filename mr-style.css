@@ -1,0 +1,553 @@
+@keyframes border-appear {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes button-appear {
+  0% {
+    opacity: 0%;
+    height: 0%;
+    width: 0%;
+    color: var(--first-color-transparent);
+  }
+  33% {
+    opacity: 100%;
+    height: 12%;
+    width: 0%;
+    color: var(--first-color-transparent);
+  }
+  66% {
+    opacity: 100%;
+    height: 12%;
+    width: 25%;
+    color: var(--first-color-transparent);
+  }
+  100% {
+    opacity: 100%;
+    height: 12%;
+    width: 25%;
+    color: var(--first-color-visible);
+  }
+}
+
+@keyframes button-disappear {
+  0% {
+    opacity: 100%;
+    height: 12%;
+    width: 25%;
+    color: var(--first-color-visible);
+    box-shadow: 0 0 30px 0 var(--first-color) inset,
+      0 0 30px 0 var(--first-color);
+    text-shadow: 0 0 30px var(--first-color);
+  }
+  33% {
+    opacity: 100%;
+    height: 12%;
+    width: 25%;
+    color: var(--first-color-transparent);
+    box-shadow: 0 0 0 0;
+    text-shadow: 0 0 0;
+  }
+  66% {
+    opacity: 100%;
+    height: 12%;
+    width: 0%;
+    color: var(--first-color-transparent);
+  }
+  100% {
+    opacity: 0%;
+    height: 0%;
+    width: 0%;
+    color: var(--first-color-transparent);
+  }
+}
+
+@keyframes borderBar-appear {
+  0% {
+    opacity: 0%;
+    height: 0%;
+  }
+  100% {
+    opacity: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes borderBar-disappear {
+  0% {
+    opacity: 100%;
+    height: 100%;
+  }
+  100% {
+    opacity: 0%;
+    height: 0%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+:root {
+  --first-color: var(--elements-blue);
+  --first-color-hover: var(--elements-blue-hover);
+  --first-color-transparent: var(--elements-blue-transparent);
+  --first-color-visible: var(--elements-blue-visible);
+  --second-color: var(--background-darkGrey);
+  --elements-blue: rgb(173, 216, 230);
+  --elements-blue-hover: rgba(173, 216, 230, 0.2);
+  --elements-blue-transparent: rgba(173, 216, 230, 0);
+  --elements-blue-visible: rgba(173, 216, 230, 1);
+  --elements-green: rgb(0, 223, 48);
+  --elements-green-hover: rgba(0, 223, 48, 0.2);
+  --elements-green-transparent: rgba(0, 223, 48, 0);
+  --elements-green-visible: rgba(0, 223, 48, 1);
+  --elements-red: rgb(181, 1, 1);
+  --elements-red-hover: rgba(181, 1, 1, 0.2);
+  --elements-red-transparent: rgba(181, 1, 1, 0);
+  --elements-red-visible: rgba(181, 1, 1, 1);
+  --background-darkGrey: rgb(28, 28, 28);
+  --background-darkRed: rgb(56, 0, 0);
+  --background-darkBlue: rgb(14, 0, 29);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  color: var(--first-color);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  color: var(--first-color);
+  font-family: inherit;
+  font-size: 1em;
+  border: solid 5px var(--first-color);
+  border-radius: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.smallButtons {
+  font-size: 0.5em;
+  border: solid 2px var(--first-color);
+  padding: 3px;
+}
+
+button:hover {
+  box-shadow: 0 0 30px 0 var(--first-color) inset, 0 0 30px 0 var(--first-color);
+  text-shadow: 0 0 30px var(--first-color);
+}
+
+.header {
+  display: none;
+}
+
+#content {
+  padding: 2% 5%;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#returnButton {
+  font-size: 1em;
+  width: 10%;
+  padding: 0;
+  border-radius: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+
+.topBar {
+  display: flex;
+}
+
+.closeButton {
+  position: absolute;
+  align-self: flex-end;
+  border-radius: 0;
+  color: var(--second-color);
+  border-top-right-radius: 30px;
+}
+
+.closeButton:hover {
+  box-shadow: 0 0 0 0;
+  text-shadow: 0 0 0;
+}
+
+#tableSpace {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  z-index: 10;
+}
+
+#overlay {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  background-color: var(--second-color);
+  opacity: 70%;
+}
+
+.button {
+  color: var(--second-color);
+}
+
+.button:hover {
+  text-shadow: 0 0 1px black;
+}
+
+#navBar {
+  display: none;
+  justify-content: center;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--second-color);
+}
+
+#first-border {
+  width: 95%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: solid 5px var(--first-color);
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px var(--first-color);
+
+  animation-name: border-appear;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.72, 1.15, 0.52, -0.27);
+}
+
+#second-border {
+  width: 98%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: solid 5px var(--first-color);
+  box-shadow: 0px 0px 10px var(--first-color);
+  border-radius: 35px;
+}
+
+#screen {
+  width: 98%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: solid 5px var(--first-color);
+  border-radius: 45px;
+  box-shadow: 0px 0px 10px var(--first-color);
+}
+
+#play {
+  width: 0%;
+  height: 0%;
+  font-size: 2em;
+  color: transparent;
+  letter-spacing: 15px;
+  animation-name: button-appear;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.tableRow:hover {
+  background-color: var(--first-color-hover);
+}
+
+#pageInput {
+  background-color: var(--first-color);
+  font-family: inherit;
+  border-radius: 30px;
+  border: none;
+}
+
+#searchbar {
+  background-color: var(--first-color);
+  font-family: inherit;
+  border-radius: 30px;
+  border: none;
+  flex-grow: 1;
+}
+
+#tableCountSelect {
+  background-color: var(--first-color);
+  font-family: inherit;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  flex-grow: 1;
+  border: none;
+}
+
+.collectionButton {
+  width: 100%;
+  margin: 1%;
+}
+
+.screen-overlay {
+  background-image: linear-gradient(transparent 0%, rgba(10, 16, 10, 0.2) 30%);
+  background-size: 1000px 1px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.spinner-box {
+  display: none;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: absolute;
+}
+
+.circle-border {
+  width: 150px;
+  height: 150px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--first-color);
+  background: linear-gradient(
+    0deg,
+    var(--first-color-hover) 33%,
+    var(--first-color-visible) 100%
+  );
+  animation: spin 0.8s linear 0s infinite;
+}
+
+.circle-core {
+  background-color: var(--second-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#settingsContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 90.9%;
+  width: 38%;
+  height: 6.7%;
+  border: 4px solid var(--first-color);
+  border-radius: 30px;
+  background: var(--second-color);
+  z-index: 1;
+  animation-name: border-appear;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.72, 1.15, 0.52, -0.27);
+}
+
+#settingsContainerMask {
+  position: absolute;
+  display: flex;
+  top: 90.9%;
+  width: 38%;
+  height: 6.7%;
+  border: 4px solid var(--second-color);
+  border-radius: 30px;
+  background: var(--second-color);
+  z-index: 1;
+}
+
+#soundButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+
+.soundButton {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  border-right: 5px solid var(--first-color);
+}
+
+#unmutedButton {
+  z-index: 2;
+}
+
+#mutedButton {
+  z-index: 1;
+  display: none;
+}
+
+#detailHider {
+  position: absolute;
+  z-index: 3;
+  height: 75%;
+  width: 82%;
+  display: none;
+  align-items: center;
+  overflow: hidden;
+}
+
+#borderBar {
+  border-radius: 30px;
+  width: 3%;
+  background-color: var(--first-color);
+  z-index: 1;
+  display: none;
+}
+
+#detailContainer {
+  position: absolute;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  right: 100%;
+  height: 90%;
+  width: 97%;
+  right: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 30px;
+  transition: 1s ease-in-out;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--first-color);
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--second-color);
+  border-radius: 30px;
+}
+
+#colorSettings {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#colorLabels {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  font-size: 11px;
+}
+
+.label {
+  height: 50%;
+  color: var(--first-color);
+}
+
+#colorThemeButtons {
+  display: flex;
+  width: 50%;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.colorButton {
+  height: 45%;
+  width: 33%;
+  font-size: 12px;
+  border-radius: 0;
+  border: 1px solid var(--first-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}

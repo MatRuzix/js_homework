@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praca domowa 2 Mateusz Ruzala</title>
+    <link rel="stylesheet" href="mr-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="screen-overlay"></div>
+    <div id="settingsContainerMask"></div>
+    <div id="settingsContainer">
+      <div id="soundButtons">
+        <button id="mutedButton" class="soundButton">&#128263;</button>
+        <button id="unmutedButton" class="soundButton">&#128266;</button>
+      </div>
+      <div id="colorSettings">
+        <div id="colorLabels">
+          <span class="label">Elements</span>
+          <span class="label">Background</span>
+        </div>
+        <div id="colorThemeButtons">
+          <button id="elementsBlue" class="colorButton">Blue</button>
+          <button id="elementsGreen" class="colorButton">Green</button>
+          <button id="elementsRed" class="colorButton">Red</button>
+          <button id="backgroundDarkGrey" class="colorButton">DGrey</button>
+          <button id="backgroundDarkRed" class="colorButton">DRed</button>
+          <button id="backgroundDarkBlue" class="colorButton">DBlue</button>
+        </div>
+      </div>
+    </div>
+    <div class="spinner-box" id="loader">
+      <div class="circle-border">
+        <div class="circle-core"></div>
+      </div>
+    </div>
+    <div class="main-container" id="main-container">
+      <div id="first-border">
+        <div id="second-border">
+          <div id="screen">
+            <div id="detailHider">
+              <div id="borderBar"></div>
+              <div id="detailContainer"></div>
+            </div>
+            <button id="play">PLAY</button>
+            <div class="header" id="header">
+              <div id="buttons"></div>
+            </div>
+            <div id="content">
+              <div class="topBar">
+                <button id="returnButton">&lsaquo;</button>
+                <select id="tableCountSelect">
+                  <option value="5">5</option>
+                  <option value="10" selected>10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="35">35</option>
+                  <option value="40">40</option>
+                  <option value="45">45</option>
+                  <option value="50">50</option>
+                </select>
+                <input id="searchbar" type="text" />
+              </div>
+              <div id="tableSpace"></div>
+              <div id="navBar">
+                <button class="navButton" id="prevButton">&laquo;</button>
+                <input id="pageInput" />
+                <button id="navInputSubmit">GO</button>
+                <button class="navButton" id="nextButton">&raquo;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio
+      src="/3-edycja-team-green/playSound.mp3"
+      id="playSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/hoverOnButton.mp3"
+      id="hoverSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/clickButton.mp3"
+      id="clickSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/hoverOnRow.mp3"
+      id="rowHoverSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/boot.mp3"
+      id="bootSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/detailsOn.mp3"
+      id="detailsOnSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/detailsOff.mp3"
+      id="detailsOffSound"
+      class="sound"
+    ></audio>
+    <audio
+      src="/3-edycja-team-green/returnSound.mp3"
+      id="returnSound"
+      class="sound"
+    ></audio>
+    <script src="MR-script.js"></script>
+  </body>
+</html>
